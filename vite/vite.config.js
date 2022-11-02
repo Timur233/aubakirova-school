@@ -18,7 +18,7 @@ export default defineConfig({
             /\.woff$/.test(name ?? '') || 
             /\.woff2$/.test(name ?? '') || 
             /\.otf$/.test(name ?? '')) {
-              return '[name].[extname]';   
+              return '[name][extname]';   
           }
                     
           if (/\.css$/.test(name ?? '')) {
