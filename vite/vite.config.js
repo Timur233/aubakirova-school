@@ -11,7 +11,16 @@ export default defineConfig({
         chunkFileNames: 'js/[name].bandle.js',
         entryFileNames: 'js/[name].bandle.js',
         
-        assetFileNames: ({name}) => {          
+        assetFileNames: ({name}) => {   
+
+          if (/\.eot$/.test(name ?? '') || 
+            /\.ttf$/.test(name ?? '') || 
+            /\.woff$/.test(name ?? '') || 
+            /\.woff2$/.test(name ?? '') || 
+            /\.otf$/.test(name ?? '')) {
+              return '[name].[extname]';   
+          }
+                    
           if (/\.css$/.test(name ?? '')) {
               return '[name].bandle[extname]';   
           }

@@ -7,6 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+    <!-- Preload -->
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/akzidenzgroteskpro-bold.woff2">
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/akzidenzgroteskpro-light.woff2">
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/akzidenzgroteskpro-md.woff2">
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/akzidenzgroteskpro-regular.woff2">
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/akzidenzgroteskpro-lightit.woff2">
+    <link 
+      rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= get_template_directory_uri() ?>/assets/dist/fa-solid-900.woff2">
+
     <?php wp_head(); ?>
 
     <!-- Stylesheet -->
