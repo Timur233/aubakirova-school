@@ -9,6 +9,7 @@
     pll_register_string('our_mission', 'Наша миссия', 'Aubakirova school', false);
     pll_register_string('team', 'Команда', 'Aubakirova school', false);
     pll_register_string('employes', 'Сотрудника', 'Aubakirova school', false);
+    pll_register_string('employses', 'Сотрудников', 'Aubakirova school', false);
     pll_register_string('see_menu', 'Посмотреть меню', 'Aubakirova school', false);
     pll_register_string('callback_title', 'Cвязаться с нами', 'Aubakirova school', false);
     pll_register_string('callback_desc', 'Оставьте заявку, мы с Вами свяжемся в ближайшее время!', 'Aubakirova school', false);
