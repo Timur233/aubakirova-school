@@ -41,7 +41,7 @@
 
         <div class="team__buttons">
             <a href="<?= get_site_url() . $lang . '/team' ?>" class="btn">
-            +<?= $count_teachers ?> <?= pll__('Сотрудника') ?>
+            +<?php // $count_teachers ?>175 <?= pll__('Сотрудника') ?>
             </a>
         </div>
 
