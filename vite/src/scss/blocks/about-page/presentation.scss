@@ -1,0 +1,18 @@
+.presentation {
+    &__btn {
+        display: none;
+
+        @media (max-width: 600px) {
+            display: inline-block;
+        }
+    }
+
+    & iframe {
+        @media (max-width: 840px) {
+            height: 450px;
+        }
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
+}

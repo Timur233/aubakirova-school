@@ -1,0 +1,52 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    z-index: 15;
+
+    @media (max-width: 600px) {
+        align-items: flex-start;
+    }
+    
+    &__content {
+        position: relative;
+        max-height: 100%;
+        box-sizing: border-box;
+        overflow: auto;
+        padding: 40px;
+    }
+
+    &__btn-close {
+        position: absolute;
+        padding: spacer(2);
+        right: spacer(4);
+        top: spacer(4);
+        border-radius: softer(4);
+        cursor: pointer;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+
+        & > .modal__icon-close g {
+            transition: fill .3s;
+        }
+
+        &:hover {
+            & > .modal__icon-close g {
+                fill: $orange;
+            }
+        }
+    }
+
+    &__icon-close {
+        width: 20px;
+        height: 20px;
+    }
+}

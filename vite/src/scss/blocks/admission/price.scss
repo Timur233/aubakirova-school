@@ -1,0 +1,13 @@
+.price {
+    padding: spacer(15) 0;
+    
+    &__title {
+        font-size: 28px;
+        line-height: 1.3;
+        font-weight: 700;
+
+        @media (max-width: 600px) {
+            font-size: 24px;
+        }
+    }
+}

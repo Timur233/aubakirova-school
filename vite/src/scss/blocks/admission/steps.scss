@@ -1,0 +1,38 @@
+.steps {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: spacer(25);
+
+        @media (max-width: 840px) {
+            gap: spacer(8);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        @media (max-width: 600px) {
+             padding-left: 90px;
+        }
+    }
+
+    &__title {
+        margin-bottom: spacer(3);
+    }
+
+    &__icon {
+        margin-bottom: spacer(6);
+
+        @media (max-width: 600px) {
+            position: absolute;
+            left: 0px;
+            top: 8px;
+            width: 80px;
+        }
+    }
+}

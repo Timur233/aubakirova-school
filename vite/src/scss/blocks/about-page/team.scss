@@ -1,0 +1,87 @@
+.team-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 16px 16px;
+    grid-template-areas:
+        "Main Main . . ."
+        "Main Main . . ."
+        ". . . . .";
+
+    @media (max-width: 840px) {
+        gap: 20px 20px;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "Main Main ."
+            "Main Main ."
+            ". . .";
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: calc(33.3% - 13px) calc(33.3% - 13px) calc(33.3% - 13px);
+        gap: 32px 20px;
+        grid-template-areas:
+            "Main Main Main"
+            "Main Main Main"
+            ". . ."
+            ". . .";
+    }
+
+    &__item {
+        &:first-child {
+            grid-area: Main;
+
+            @media (max-width: 840px) {
+                padding-right: spacer(4);
+            }
+
+            @media (max-width: 500px) {
+                padding-right: spacer(0);
+
+                & > img {
+                    max-width: 260px;
+                }
+            }
+        }
+
+        &:not(:first-child) {
+            max-width: 150px;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        margin-bottom: spacer(4);
+    }
+
+    &__name {
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-bottom: spacer(2);
+
+        @media (max-width: 500px) {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    }
+
+    &__pos {
+        display: block;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+}
+
+.team {
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: spacer(4);
+        margin-top: spacer(10);
+        font-weight: 600;
+    }
+}

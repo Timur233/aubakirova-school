@@ -1,0 +1,44 @@
+.food {
+    font-size: 20px;
+
+    @media (max-width: 600px) {
+         font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+         font-size: 14px;
+    }
+
+    & a {
+        font-weight: 600;
+    }
+    
+    &__flex {
+        align-items: flex-start;
+
+        & .flex__4 {
+            @media (max-width: 600px) {
+                width: 50%;
+                // order: 0;
+                // width: 100%;
+                // margin-bottom: spacer(5);
+
+                & > img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        & .flex__8 {
+            padding-right: 40px;
+
+            @media (max-width: 600px) {
+                width: 50%;
+                padding-right: 20px;
+                // order: 1;
+                // padding-right: 0;
+                // width: 100%;
+            }
+        }
+    }
+}

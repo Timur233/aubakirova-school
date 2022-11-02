@@ -1,0 +1,15 @@
+li#toplevel_page_cptui_main_menu {
+    display: none;
+}
+
+li#toplevel_page_edit-post_type-acf-field-group {
+    display: none;
+}
+
+li#menu-plugins {
+    display: none;
+}
+
+[href="theme-editor.php"] {
+    display: none !important;
+}

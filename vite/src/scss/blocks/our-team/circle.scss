@@ -1,0 +1,131 @@
+.circle {
+    &__team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: spacer(8);
+
+        @media (max-width: 840px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 500px) {
+            gap: spacer(4);
+        }
+    }
+}
+
+.team-grid {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        margin-bottom: spacer(2);
+    }
+
+    &__pos {
+        display: block;
+        line-height: 1.4;
+        margin-bottom: spacer(4);
+
+        @media (max-width: 500px) {             
+            font-size: 14px;
+            line-height: 1.2;
+        }
+    }
+
+    &__content {
+        &--hidden {
+            display: none;
+        }
+    }
+    
+    &__img {
+        margin-bottom: spacer(4);
+    }
+
+    &__btn {
+        margin-top: auto;
+    }
+}
+
+.about-me {
+    &__photo {
+        @media (max-width: 500px) {             
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    }
+    
+    &__info {
+        padding-left: spacer(10);
+        padding-top: spacer(5);
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 500;
+        position: relative;
+
+        @media (max-width: 500px) {             
+            font-size: 18px
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 1px;
+            width: 120px;
+            background-color: $orange;
+        }
+    }
+
+    &__params {
+        & > dt {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: spacer(1);
+            cursor: pointer;
+
+            @media (max-width: 500px) {             
+                font-size: 14px
+            }
+        }
+        & > dd {
+            margin-left: 0px;
+            margin-bottom: spacer(4);
+            transition: padding-left .8s;
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+
+                @media (max-width: 500px) {             
+                    font-size: 14px
+                }
+            }
+
+            &:hover {
+                padding-left: spacer(1);
+
+                @media (max-width: 768px) {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

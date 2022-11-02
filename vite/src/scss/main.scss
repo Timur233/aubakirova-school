@@ -1,0 +1,71 @@
+@import "vars.scss";
+@import "reset.scss";
+@import "font.scss";
+@import "icon-font.scss";
+@import "mixins.scss";
+@import "default.scss";
+@import "ios.scss";
+
+// Base Elements Start
+@import "elements/grid.scss";
+@import "elements/buttons.scss";
+@import "elements/forms.scss";
+@import "elements/modal.scss";
+@import "elements/author-label.scss";
+// Base Elements END
+
+// Base Blocks Start
+@import "blocks/header.scss";
+@import "blocks/slider.scss";
+@import "blocks/breadcrumbs.scss";
+@import "blocks/callback.scss";
+@import "blocks/footer.scss";
+// Base Blocks END
+
+// About page Start
+@import "blocks/about-page/about.scss";
+@import "blocks/about-page/mission.scss";
+@import "blocks/about-page/news.scss";
+@import "blocks/about-page/team.scss";
+@import "blocks/about-page/food.scss";
+@import "blocks/about-page/security.scss";
+@import "blocks/about-page/values.scss";
+@import "blocks/about-page/presentation.scss";
+// About page END
+
+// Admission page Start
+@import "blocks/admission/price.scss";
+@import "blocks/admission/in_price.scss";
+@import "blocks/admission/steps.scss";
+// Admission page END
+
+// Education page Start
+@import "blocks/education/programm.scss";
+@import "blocks/education/more.scss";
+@import "blocks/education/music.scss";
+@import "blocks/education/accordion.scss";
+@import "blocks/education/concept.scss";
+// Education page END
+
+// Main page Start
+@import "blocks/main-page/author.scss";
+@import "blocks/main-page/leader.scss";
+@import "blocks/main-page/lessons.scss";
+// Main page END
+
+// Our Team Start
+@import "blocks/our-team/circle.scss";
+@import "blocks/our-team/about_team.scss";
+// Our Team END
+
+// News Start
+@import "blocks/news/news.scss";
+// News END
+
+// Reviews Start
+@import "blocks/reviews/reviews.scss";
+// Reviews END
+
+// Docs Start
+@import "blocks/docs/docs.scss";
+// Docs END
