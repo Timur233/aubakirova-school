@@ -25,6 +25,10 @@
         & .menu-toggle__line {
             background-color: #fafafa;
         }
+
+        & .head-contacts__links:hover {
+            color: $orange;
+        }
     }
 
     &__top {
@@ -63,9 +67,16 @@
         & > i {
             font-size: 90%;
             margin-right: spacer(1);
+
         }
 
         font-weight: 500;
+        margin-left: 12px;
+        transition: color .3s;
+
+        &:hover {
+            color: $accent-color;
+        }
     }
 }
 

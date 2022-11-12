@@ -106,6 +106,10 @@
             max-width: 40px;
             margin-left: spacer(-12);
         }
+
+        @media (max-width: 381px) {
+            display: none;
+        }
     }
 
     &__label {

@@ -54,6 +54,15 @@
                     endif; 
                 ?>
               </a>
+              <?php $translations = pll_the_languages( array( 'dropdown' => 0, 'hide_current' => 1, 'raw' => 1 ) ); ?>
+              <?php foreach ($translations as $key => $array) {
+                echo <<< LANG
+                  <a href="{$array['url']}" class="head-contacts__links">
+                    <i class="fa-solid fa-earth-africa"></i>
+                    {$array['name']}
+                  </a>
+                LANG;
+              } ?>
             </div>
           </div>
           <div id="main-header__bottom" class="main-header__bottom navigation">
@@ -120,6 +129,15 @@
         );
       ?>
       <div class="mobile-menu__contacts">
+        <?php $translations = pll_the_languages( array( 'dropdown' => 0, 'hide_current' => 1, 'raw' => 1 ) ); ?>
+        <?php foreach ($translations as $key => $array) {
+          echo <<< LANG
+            <a href="{$array['url']}" class="mobile-menu__lang">
+              <i class="fa-solid fa-earth-africa"></i>
+              {$array['name']}
+            </a>
+          LANG;
+        } ?>
         <a href="tel:<?= get_theme_mod('phone_one')?>" class="mobile-menu__phone">
           <i class="fa-solid fa-phone"></i> 
           <?= get_theme_mod('phone_one')?>
