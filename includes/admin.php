@@ -1,5 +1,8 @@
 <?php 
 
+/**
+ * Кастомные стили адми панели
+ */
 function admin_style() {
     $current_user = wp_get_current_user();
 
@@ -9,3 +12,25 @@ function admin_style() {
 }
 
 add_action('admin_enqueue_scripts', 'admin_style');
+
+/**
+ * Добавление столбцов в админ панели
+ */
+add_filter( 'manage_edit-team_columns', 'true_add_post_columns', 25 ); 
+ 
+function true_add_post_columns( $my_columns ){
+	$my_columns[ 'position' ] = 'Должность';
+	return $my_columns; 
+}
+ 
+add_action( 'manage_posts_custom_column', 'true_fill_post_columns', 25 );
+ 
+function true_fill_post_columns( $column ) {
+	switch ( $column ) {
+		case 'position': {
+			$position = get_field('teach_position', get_the_ID());
+            echo $position ? $position : 'Нет'; 
+			break;
+		}
+	}
+}
