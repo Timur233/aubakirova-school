@@ -24,6 +24,7 @@
         );
 
         foreach ($teachers as $item) {
+            $id = $item->ID;
             $title = get_the_title($item->ID);
             $image_src = get_the_post_thumbnail_url($item->ID, 'medium');
             $image = !empty($image_src) ? get_the_post_thumbnail_url($item->ID, 'medium') : 
@@ -71,7 +72,13 @@
                             </div>
                         </div>
                     </div>
-                    <button class="team-grid__btn btn btn--outline">{$translations['team_about']}</button>
+                    <button
+                        id="teacher-{$id}" 
+                        title="{$title}"
+                        class="team-grid__btn btn btn--outline"
+                    >
+                        {$translations['team_about']}
+                    </button>
                 </div>
             TEACHER;
         }

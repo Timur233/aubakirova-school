@@ -18,6 +18,11 @@ export default class OurTeam {
 
             button.addEventListener('click', () => {
                 this.modal = <Element>this.openModal(content);
+
+                window.history.pushState({page: 1}, '', ''); // button.id
+                window.onpopstate = () => {
+                    this.closeModal();
+                };
             });            
         }
     }
@@ -38,6 +43,13 @@ export default class OurTeam {
         document.documentElement.classList.add('open-modal');
 
         return modalWrapper;
+    }
+
+    public closeModal():void {
+        if (!this.modal) return;
+
+        this.modal.remove();
+        document.documentElement.classList.remove('open-modal');
     }
 
     public renderCloseButton():any {
@@ -86,10 +98,8 @@ export default class OurTeam {
             </svg>
         `;
         btnWrap.addEventListener('click', () => {
-            if (!this.modal) return;
-
-            this.modal.remove();
-            document.documentElement.classList.remove('open-modal');
+            window.history.back();
+            this.closeModal();
         });
 
         return btnWrap;
