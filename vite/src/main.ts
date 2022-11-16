@@ -5,12 +5,13 @@ import OurTeam from './ts/our-team';
 import MobileMenu from './ts/mobile-menu';
 import NewsSlider from './ts/single-news-slider';
 import CallBackForm from './ts/callback-form';
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, { Navigation, Scrollbar, Autoplay } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/scrollbar';
 
 console.log('%cDeveloper Iskandarov Timur 👋', 'color:#fff; background-color:#333; padding: 8px 15px; font-size: 12px; border-radius: 2px; text-align:center');
 
-Swiper.use([Navigation, Autoplay]);
+Swiper.use([Navigation, Scrollbar, Autoplay]);
 
 new Swiper('.news-swiper', {
   loop: true,
@@ -41,26 +42,48 @@ new Swiper('.lessons__swiper', {
   autoplay: {
     delay: 2500,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-  },
   breakpoints: {
     0: {
       slidesPerView: 2.2,
       spaceBetween: 12,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
     },
     520: {
       slidesPerView: 3.4,
-      spaceBetween: 16
+      spaceBetween: 16,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
     },
     768: {
       slidesPerView: 4.4,
-      spaceBetween: 16
+      spaceBetween: 16,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
     },
     840: {
       slidesPerView: 6,
-      spaceBetween: 16
-    }
+      spaceBetween: 16,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+    },
+    1200: {
+      slidesPerView: 6,
+      spaceBetween: 16,
+      scrollbar: false,
+      navigation: {
+        prevEl: '.lessons__button--prev',
+        nextEl: '.lessons__button--next',  
+      },
+    },
   }
 });
 

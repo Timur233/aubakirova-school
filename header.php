@@ -31,7 +31,7 @@
     <?php wp_head(); ?>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=7">
+    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=8">
     <?php if (get_locale() !== 'ru_RU' && false): ?>
       <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/kaz.lang.css?v=6">
     <?php endif; ?>

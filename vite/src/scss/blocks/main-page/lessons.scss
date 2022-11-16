@@ -2,4 +2,60 @@
     &__swiper {
         margin-top: spacer(10);
     }
+
+    &__swiper-block {
+        position: relative;
+
+        @media (max-width: 1200px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__scrollbar {
+        bottom: -28px !important;
+        background-color: rgba(0, 0, 0, 0.01) !important;
+
+        @media (min-width: 1200px) {
+            display: none;
+        }
+
+        & .swiper-scrollbar-drag {
+            background-color: #fabf3f;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: -48px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+
+        &--prev {
+            right: auto;
+            left: -48px;
+
+            & > svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        & > svg {
+            width: 16px;
+            cursor: pointer;
+        }
+
+        & > svg path {
+            transition: stroke .25s;
+        }
+
+        &:hover {
+            & > svg path {
+                stroke: #fabf3f;
+            }
+        }
+    }
 }
