@@ -31,7 +31,7 @@
     <?php wp_head(); ?>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=8">
+    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=9">
 
 </head>
 
@@ -41,6 +41,10 @@
         <div class="container">
           <div class="main-header__top head-contacts">
             <div class="head-contacts__addres">
+              <a href="tel:<?= get_theme_mod('phone_one')?>" class="head-contacts__links">
+                <i class="fa-solid fa-phone"></i> 
+                <?= get_theme_mod('phone_one')?>
+              </a>
               <a href="#" class="head-contacts__links">
                 <i class="fa-solid fa-location-dot"></i> 
                 <?php 
@@ -54,8 +58,7 @@
               <?php $translations = pll_the_languages( array( 'dropdown' => 0, 'hide_current' => 1, 'raw' => 1 ) ); ?>
               <?php foreach ($translations as $key => $array) {
                 echo <<< LANG
-                  <a href="{$array['url']}" class="head-contacts__links">
-                    <i class="fa-solid fa-earth-africa"></i>
+                  <a href="{$array['url']}" class="head-contacts__links head-contacts__lang">
                     {$array['name']}
                   </a>
                 LANG;
@@ -138,6 +141,16 @@
         <a href="tel:<?= get_theme_mod('phone_one')?>" class="mobile-menu__phone">
           <i class="fa-solid fa-phone"></i> 
           <?= get_theme_mod('phone_one')?>
+        </a>
+        <a href="#" class="mobile-menu__adres">
+          <i class="fa-solid fa-location-dot"></i> 
+          <?php 
+              if (get_locale() === 'ru_RU'):
+                  echo get_theme_mod('adres_one');
+              else:
+                  echo get_theme_mod('adres_two');
+              endif; 
+          ?>
         </a>
       </div>
     </div>
