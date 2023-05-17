@@ -164,7 +164,7 @@ include('widgets/breadcrumbs.php');
                 <div class="counselor__desc">О себе</div>
             </div>
             <div class="flex__3 cump-team__counselor counselor">
-                <img class="counselor__img" src="http://саха-отдых-детей.рф/wp-content/uploads/2019/01/%D0%9E%D1%82%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2-%C2%AB%D0%94%D1%83%D1%88%D0%B0-%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%B0%C2%BB-320x320.jpg" alt="">
+                <img class="counselor__img" src="https://assets.website-files.com/61a8d4883d2409fefabafde4/63501fef09d73b1cd54bd042_WhatsApp%20Image%202022-07-12%20at%204.13.16%20PM.jpeg" alt="">
                 <span class="counselor__title">Имя Фамилия</span>
                 <div class="counselor__desc">О себе</div>
             </div>
