@@ -72,7 +72,7 @@ new Swiper('.lessons__swiper', {
       spaceBetween: 16,
       scrollbar: {
         el: '.swiper-scrollbar',
-        draggable: true,
+        draggable: true
       },
     },
     1200: {
@@ -83,6 +83,34 @@ new Swiper('.lessons__swiper', {
         prevEl: '.lessons__button--prev',
         nextEl: '.lessons__button--next',  
       },
+    },
+  }
+});
+
+new Swiper('.cump-gallery', {
+  loop: true,
+  slidesPerView: 'auto',
+  autoHeight: true,
+  spaceBetween: 16,
+  navigation: {
+    prevEl: '.cump-gallery__button--prev',
+    nextEl: '.cump-gallery__button--next',  
+  },
+  breakpoints: {
+    0: {
+      spaceBetween: 12,
+    },
+    520: {
+      spaceBetween: 16,
+    },
+    768: {
+      spaceBetween: 16,
+    },
+    840: {
+      spaceBetween: 16,
+    },
+    1200: {
+      spaceBetween: 16,
     },
   }
 });

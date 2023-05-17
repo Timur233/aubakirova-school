@@ -1,0 +1,312 @@
+.summer-cump {
+    &__item {
+        &--left {
+            padding-right: 20px;
+        }
+
+        @media (max-width: 720px) {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+
+            &--left {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    &__video {
+        width: 100%;
+        height: 315px;
+
+        @media (max-width: 950px) {
+            height: 265px;
+        }
+
+        @media (max-width: 840px) {
+            height: 265px;
+        }
+
+        @media (max-width: 720px) {
+            height: 350px;
+        }
+
+        @media (max-width: 550px) {
+            height: 280px;
+        }
+
+        @media (max-width: 400px) {
+            height: 200px;
+        }
+    }
+}
+
+.cump-gallery {
+    & .swiper-slide {
+        width: auto
+    }
+
+    &__img {
+        height: 380px;
+
+        @media (max-width: 1000px) {
+            height: 300px;
+        }
+
+        @media (max-width: 600px) {
+            height: 250px;
+        }
+
+        @media (max-width: 450px) {
+            height: 200px;
+        }
+    }
+
+    &__block {
+        position: relative;
+    }
+
+    &__button {
+        position: absolute;
+        right: -48px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+
+        @media (max-width: 1200px) {
+            right: 32px;
+
+            & > svg path {
+                stroke: #FFF;
+            }
+        }
+
+        &--prev {
+            right: auto;
+            left: -48px;
+
+            @media (max-width: 1200px) {
+                left: 32px;
+            }
+
+            & > svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        & > svg {
+            width: 16px;
+            cursor: pointer;
+        }
+
+        & > svg path {
+            transition: stroke .25s;
+        }
+
+        &:hover {
+            & > svg path {
+                stroke: #fabf3f;
+            }
+        }
+    }
+
+    &__block {
+        margin-bottom: 32px;
+    }
+
+    &__desc {
+        & > ul {
+            padding-left: 10px;
+
+            & > li {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+    
+                &::before {
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    width: 10px;
+                    background: $orange;
+                }
+            }
+        } 
+
+        & > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.included-benefit {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 60px;
+    padding: 0 30px;
+
+    & > img {
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    @media (max-width: 900px) {
+        width: 33.3%;
+    }
+
+    @media (max-width: 720px) {
+        width: 50%;
+
+        & > img {
+            max-width: 190px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        & > img {
+            max-width: 150px;
+        }
+    }
+}
+
+.included-benefit>span {
+    font-weight: 500;
+}
+
+.cump-page__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+    @media (max-width: 550px) {
+        font-size: 22px;
+    }
+}
+
+.cump-team {
+    &__counselor {
+        margin-bottom: 32px;
+
+        @media (max-width: 1000px) {
+            width: 33.3%;
+        }
+
+        @media (max-width: 800px) {
+            width: 50%;
+        }
+
+        @media (max-width: 600px) {
+            &__img {
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+.counselor {
+    text-align: center;
+
+    &__img {
+        width: 100%;
+        padding: 0 40px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+
+        @media (max-width: 450px) {
+            padding: 0 24px;
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 4px;
+
+        @media (max-width: 550px) {
+            font-size: 16px;
+        }
+    }
+
+    &__desc {
+        font-size: 15px;
+    }
+}
+
+.cump-programm {
+    &__flex {
+        width: 100%;
+    }
+}
+
+.cump-programm-item {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    margin-bottom: 24px;
+
+    &__img {
+       width: 40px;
+       height: auto;
+       margin-right: 16px;
+    }
+
+    @media (max-width: 1000px) {
+        width: 50%;
+    }
+
+    @media (max-width: 580px) {
+        align-items: flex-start;
+        padding-right: 0px;
+        padding-left: 0;
+
+        &__img {
+            margin-right: 8px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 16px;
+
+        &__img {
+           width: 32px;
+        }
+    }
+}
+
+.cump-price {
+    &__title {
+        font-size: 24px;
+
+        @media (max-width: 550px) {
+            font-size: 18px;            
+        }
+    }
+
+    &__price {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__callback {
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        gap: 16px;
+
+        @media (max-width: 550px) {
+            font-size: 18px;            
+        }
+    }
+
+    &__docs-link {
+        white-space: nowrap;
+        font-size: 16px;
+        text-decoration: underline;
+        color: blue;
+    }
+}
