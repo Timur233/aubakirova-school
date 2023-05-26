@@ -11,6 +11,7 @@
     pll_register_string('employes', 'Сотрудника', 'Aubakirova school', false);
     pll_register_string('employses', 'Сотрудников', 'Aubakirova school', false);
     pll_register_string('see_menu', 'Посмотреть меню', 'Aubakirova school', false);
+    pll_register_string('callback_butt', 'Оставить заявку', 'Aubakirova school', false);
     pll_register_string('callback_title', 'Cвязаться с нами', 'Aubakirova school', false);
     pll_register_string('callback_desc', 'Оставьте заявку, мы с Вами свяжемся в ближайшее время!', 'Aubakirova school', false);
     pll_register_string('callback_name', 'Ваше имя', 'Aubakirova school', false);

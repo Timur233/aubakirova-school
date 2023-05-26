@@ -8,6 +8,7 @@ import CallBackForm from './ts/callback-form';
 import Swiper, { Navigation, Scrollbar, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import CumpPage from './ts/cump';
 
 console.log('%cDeveloper Iskandarov Timur 👋', 'color:#fff; background-color:#333; padding: 8px 15px; font-size: 12px; border-radius: 2px; text-align:center');
 
@@ -126,3 +127,5 @@ new NewsSlider();
 new MobileMenu();
 
 new CallBackForm('.callback__form');
+
+new CumpPage();
