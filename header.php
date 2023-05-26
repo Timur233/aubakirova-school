@@ -31,7 +31,7 @@
     <?php wp_head(); ?>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=10">
+    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/dist/main.bandle.css?v=11">
 
 </head>
 

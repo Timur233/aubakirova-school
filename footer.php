@@ -31,7 +31,7 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?= get_template_directory_uri() ?>/assets/dist/js/app.bandle.js?v=9"></script>
+<script src="<?= get_template_directory_uri() ?>/assets/dist/js/app.bandle.js?v=11"></script>
 <script src="<?= get_template_directory_uri() ?>/assets/js/fslightbox.js"></script>
 
 <?php 
