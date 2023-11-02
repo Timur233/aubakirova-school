@@ -18,18 +18,19 @@
     } );
 
     function uploadFile(WP_REST_Request $request) {
-        $file = $_FILES['file'];
         $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
-        $file_path = $upload_directory . '/' . $file['name'];
+        $file = $_FILES['file'];
+        $file_info = pathinfo($file['name']);
+        $file_extension = $file_info['extension'];
+        $file_name = $request->get_param('user_name');
+        $file_path = $upload_directory . '/' . $file['name'] . time() . $file_extension;
 
         $response = array(
             'message'  => '',
             'file_name' => $file['name']
         );
 
-        if (!file_exists($upload_directory)) {
-            mkdir($upload_directory, 0755, true);
-        }
+        if (!file_exists($upload_directory)) mkdir($upload_directory, 0755, true);
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
             $response['message'] = 'Файл успешно загружен';
