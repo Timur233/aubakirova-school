@@ -10,7 +10,12 @@
             $files = array_diff($files, array('..', '.')); 
 
             foreach ($files as $file) {
-                $files_html .= $file . "<br>";
+                $files_html .= <<<HTML
+                    <div class="file-list__item">
+                        $file
+                        <a href="$file" class="remove-btn">Удалить</a>
+                    </div>
+                HTML;
             }
         }
         
