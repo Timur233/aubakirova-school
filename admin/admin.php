@@ -2,7 +2,9 @@
 
 ////////////TEMPLATES
 function display_self_esteem_metabox() {
-	return "sfsdfdsfsdfsddfs";
+	global $post;
+
+	return json_encode($post);
 }
 
 function self_esteem_metabox() {
