@@ -5,7 +5,7 @@
         $files_html = '';
 
         if (is_dir($folder)) {
-            $files_html = '11';
+            $files_html = '';
             $files = scandir($folder);
             $files = array_diff($files, array('..', '.')); 
 
@@ -13,6 +13,7 @@
                 $files_html .= <<<HTML
                     <div class="file-list__item">
                         $file
+                        <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
                         <a href="$file" class="remove-btn">Удалить</a>
                     </div>
                 HTML;
