@@ -8,6 +8,10 @@
             </div>
 
             <div class="flex__5 footer-social">
+                <a href="https://school.aubakirova.kz/camooczenka/" target="_blank" class="footer-social__item">
+                    Cамооценка
+                </a>
+
                 <?php if (get_theme_mod('insta_link')):?>
                     <a href="https://www.instagram.com/<?= get_theme_mod('insta_link')?>" target="_blank" class="footer-social__item">
                         <span class="footer-social__icon">
