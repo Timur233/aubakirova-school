@@ -27,7 +27,8 @@
                     const file = fileInput.files[0];
 
                     if (file) {
-                        var formData = new FormData();
+                        let formData = new FormData();
+                        
                         formData.append('file', file);
                         formData.append('file_name', 'test');
 

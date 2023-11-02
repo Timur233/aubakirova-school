@@ -9,11 +9,9 @@
             'args'     => [
                 'file_name' => [
                     'type'     => 'string', 
-                    'required' => true,  
                 ],
                 'file' => [
                     'type'    => 'object',
-                    'required' => true,  
                 ],
             ],
         ];
@@ -22,7 +20,13 @@
     
     } );
 
-    function uploadFile() {
-        
+    function uploadFile(WP_REST_Request $request) {
+
+        $response = array(
+            'user_name'  => $request->get_param('user_name'),
+            'user_phone' => $request->get_param('user_phone')
+        );
+
+        return json_encode($response);
     }
 ?>
