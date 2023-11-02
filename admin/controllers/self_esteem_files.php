@@ -45,7 +45,7 @@ ini_set('display_errors', 1);
 
         $response = array(
             'message'  => '',
-            'file_name' => $file['name']
+            'file_name' => $file_name
         );
 
         if (!file_exists($upload_directory)) mkdir($upload_directory, 0777, true);

@@ -34,6 +34,7 @@
             </div>
 
             <script>
+                const fileList = document.querySelectorAll('.file-list__item');
                 const fileUploader = document.querySelector('.file-uploader');
                 const uploadButton = document.querySelector('.file-uploader__button');
 
@@ -67,6 +68,18 @@
                         alertEl.remove();
                     }, 1000)
                 };
+
+                const appendFile = (fileName) => {
+                    const file = `
+                        <div class="file-list__item">
+                            ${fileName}
+                            <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/${fileName}" target="_blank">Просмотр</a>
+                            <a data-file="$file" class="remove-btn">Удалить</a>
+                        </div>
+                    `;
+
+                    fileList.prepend(file);
+                };
                 
                 uploadButton.addEventListener('click', (event) => {
 
@@ -92,6 +105,7 @@
                             .then(data => {
                                 fileUploader.classList.remove('file-uploader--loading');
 
+                                appendFile(data.file_name);
                                 clearForm();
                                 successAlert();
                             })
@@ -131,6 +145,7 @@
                             body: formData,
                         })
                             .then(res => {
+                                alert('Файл успешно удален');
                                 item.remove();
                             })
                             .catch(() => {
@@ -183,6 +198,42 @@
 
                 .file-uploader__button:hover {
                     background: #165283;
+                }
+
+                .file-uploader--loading:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgb(197 197 197 / 50%);
+                }
+
+                .file-list {
+                    margin-top: 20px;
+                    margin-bottom: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+
+                .file-list__item {
+                    display: flex;
+                    align-items: center;
+                    background: #eeeeee;
+                    padding: 6px 12px;
+                    border-radius: 3px;
+                }
+
+                .file-list__item > a:first-child {
+                    margin-left: auto;
+                    margin-right: 8px;
+                }
+
+                .file-list__item > a {
+                    text-decoration: underline;
+                    cursor:pointer;
                 }
             </style>
         HTML;
