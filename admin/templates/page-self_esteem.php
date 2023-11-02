@@ -6,6 +6,9 @@
 
         if (is_dir($directory)) {
             $files = scandir($directory);
+
+            print_r($files);
+
             $files = array_diff($files, array('..', '.'));
 
             foreach ($files as $file) {
