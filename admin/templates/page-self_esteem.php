@@ -3,7 +3,7 @@
     function display_self_esteem_metabox() {
         echo <<<HTML
             <div class="file-uploader">
-                <input class="file-uploader__name" type="text">
+                <input class="file-uploader__name" type="text" placeholder="Название файла">
                 <input class="file-uploader__file" type="file">
                 <button class="file-uploader__button">Загрузить</button>
             </div>
