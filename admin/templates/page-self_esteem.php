@@ -34,7 +34,7 @@
             </div>
 
             <script>
-                const fileList = document.querySelectorAll('.file-list__item');
+                const list = document.querySelectorAll('.file-list__item');
                 const fileUploader = document.querySelector('.file-uploader');
                 const uploadButton = document.querySelector('.file-uploader__button');
 
@@ -77,7 +77,7 @@
                         '<a data-file="$file" class="remove-btn">Удалить</a>' +
                         '</div>';
 
-                    fileList.prepend(file);
+                    list.prepend(file);
                 };
                 
                 uploadButton.addEventListener('click', (event) => {
