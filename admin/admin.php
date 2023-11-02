@@ -2,9 +2,21 @@
 
 ////////////TEMPLATES
 function display_self_esteem_metabox() {
-	global $post;
-	
-	echo "IS METABOX";
+	echo <<<HTML
+		<div class="file-uploader">
+			<input type="file">
+		</div>
+		<div class="file-list">
+
+		</div>
+
+		<style>
+			.file-uploader {
+				background-color: red;
+			}
+		</style>
+		<script></script>
+	HTML;
 }
 
 function self_esteem_metabox() {
@@ -14,7 +26,7 @@ function self_esteem_metabox() {
 		remove_post_type_support('page', 'editor');
 		remove_meta_box('postimagediv', 'page', 'side');
 
-		add_meta_box('self_esteem_metabox', 'Самооценка', 'display_self_esteem_metabox', 'page', 'normal', 'high');
+		add_meta_box('self_esteem_metabox', 'Список файлов', 'display_self_esteem_metabox', 'page', 'normal', 'high');
 	}
 }
 
