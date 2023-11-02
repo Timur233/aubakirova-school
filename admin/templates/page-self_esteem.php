@@ -4,10 +4,13 @@
         $folder = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
         $files_html = '';
 
-        $files = glob($folder . '/*');
+        if (is_dir($folder)) {
+            $files = scandir($folder);
+            $files = array_diff($files, array('..', '.')); 
 
-        foreach ($files as $file) {
-            $files_html += basename($file) . "<br>";
+            foreach ($files as $file) {
+                $files_html += $file . "<br>";
+            }
         }
         
         echo <<<HTML
