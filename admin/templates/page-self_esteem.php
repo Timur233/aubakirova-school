@@ -5,11 +5,12 @@
         $files_html = '';
 
         if (is_dir($folder)) {
+            $files_html = '11';
             $files = scandir($folder);
             $files = array_diff($files, array('..', '.')); 
 
             foreach ($files as $file) {
-                $files_html += $file . "<br>";
+                $files_html .= $file . "<br>";
             }
         }
         
