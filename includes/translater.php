@@ -30,5 +30,6 @@
     pll_register_string('adress', 'Адрес:', 'Aubakirova school', false);
     pll_register_string('presa', 'Презентация о школе', 'Aubakirova school', false);
     pll_register_string('see_menu', 'Посмотреть меню', 'Aubakirova school', false);
+    pll_register_string('self_esteem', 'Cомооценка', 'Aubakirova school', false);
 
 ?>
