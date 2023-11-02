@@ -14,7 +14,7 @@
                     <div class="file-list__item">
                         $file
                         <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
-                        <a href="$file" class="remove-btn">Удалить</a>
+                        <a data-file="$file" class="remove-btn">Удалить</a>
                     </div>
                 HTML;
             }
@@ -123,7 +123,7 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?file_name=' + removeBtn.href, {
+                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?file_name=' + removeBtn.dataset.file, {
                             method: 'GET',
                         })
                             .then(res => {

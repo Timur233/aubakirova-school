@@ -59,15 +59,20 @@
     function removeFile(WP_REST_Request $request) {
         $file_name = $request->get_param('file_name');
         $file_path = $upload_directory . '/' . $file_name;
+        $response = [
+            'status' => 500,
+            'message' => 'Файл не существует'
+        ];
 
         if (file_exists($file_path)) {
             if (unlink($file_path)) {
-                echo 'Файл успешно удален.';
+                $response['status'] = 200;
+                $response['message'] = 'Файл успешно удален';
             } else {
-                echo 'Не удалось удалить файл.';
+                $response['message'] = 'Не удалось удалить файл';
             }
-        } else {
-            echo 'Файл не существует.';
         }
+
+        return $response;
     }
 ?>
