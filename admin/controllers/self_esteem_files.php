@@ -11,7 +11,7 @@
                     'type'     => 'string', 
                 ],
                 'file' => [
-                    'type'    => 'object',
+                    'type'    => 'anyOf',
                 ],
             ],
         ];
