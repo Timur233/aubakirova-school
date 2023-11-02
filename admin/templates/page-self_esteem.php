@@ -111,6 +111,7 @@
                             .catch(error => {
                                 fileUploader.classList.remove('file-uploader--loading');
 
+                                console.log(error);
                                 alert('Не удалось загрузить файл! Попробуйте снова.');
                             });
                     } else {
