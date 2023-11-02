@@ -126,6 +126,7 @@
 
                     readButton.href = 'https://school.aubakirova.kz/wp-content/uploads/self-esteem/' + fileName;
                     readButton.textContent = 'Просмотр';
+                    readButton.target = '_blank';
 
                     removeButton.dataset.file = fileName;
                     removeButton.addEventListener('click', () => { removeFn(item, removeButton) });
