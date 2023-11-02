@@ -3,12 +3,11 @@
 ////////////TEMPLATES
 function display_self_esteem_metabox() {
 	global $post;
-
-	echo json_encode($post);
-	echo 'is empty';
-
-	if ($post) {
+	
+	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
 		echo get_page_template_slug($post);
+	} else {
+		return false;
 	}
 }
 
