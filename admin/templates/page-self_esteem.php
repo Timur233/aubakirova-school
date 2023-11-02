@@ -3,6 +3,7 @@
     function display_self_esteem_metabox() {
         echo <<<HTML
             <div class="file-uploader">
+                <input class="file-uploader__name" type="text">
                 <input class="file-uploader__file" type="file">
                 <button class="file-uploader__button">Загрузить</button>
             </div>
@@ -16,23 +17,32 @@
                 }
             </style>
             <script>
-                const uploadButton = document.querySelector('.file-uploader__button')
+                const fileUploader = document.querySelector('.file-uploader');
+                const uploadButton = document.querySelector('.file-uploader__button');
+
+                const fileInput = document.querySelector('.file-uploader__file');
+                const fileNameInput = document.querySelector('.file-uploader__name');
+                
+                const clearForm = () => {
+                    fileInput.value = '';
+                    fileNameInput.value = '';
+                };
                 
                 uploadButton.addEventListener('click', (event) => {
 
                     event.preventDefault();
                     event.stopPropagation();
 
-                    const fileInput = document.querySelector('.file-uploader__file');
                     const file = fileInput.files[0];
+                    const fileName = fileNameInput.value;
 
-                    if (file) {
+                    if (file && fileName) {
                         let formData = new FormData();
-                        
-                        formData.append('file', file);
-                        formData.append('file_name', 'test');
 
-                        console.log(formData);
+                        formData.append('file', file);
+                        formData.append('file_name', fileName);
+
+                        fileUploader.classList.add('file-uploader--loading');
 
                         fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/upload', {
                             method: 'POST',
@@ -40,13 +50,23 @@
                         })
                             .then(response => response.json())
                             .then(data => {
-                                console.log('Файл успешно загружен:', data);
+                                fileUploader.classList.remove('file-uploader--loading');
+
+                                clearForm();
                             })
                             .catch(error => {
-                                console.error('Произошла ошибка при загрузке файла:', error);
+                                fileUploader.classList.remove('file-uploader--loading');
+
+                                alert('Не удалось загрузить файл! Попробуйте снова.');
                             });
                     } else {
-                        console.error('Выберите файл для загрузки.');
+                        alert('Нужно заполнить форму');
+                    }
+                });
+
+                fileInput.addEventListener('change', () => {
+                    if (!fileNameInput.value) {
+                        fileNameInput.value = fileInput.files[0].name.replace(/\.[^.]*$/, '');
                     }
                 });
             </script>

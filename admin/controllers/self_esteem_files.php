@@ -22,7 +22,7 @@
         $file = $_FILES['file'];
         $file_info = pathinfo($file['name']);
         $file_extension = $file_info['extension'];
-        $file_name = $request->get_param('file_name') . '-' . 
+        $file_name = $request->get_param('file_name') . '__' . 
             (microtime(true) * 10000) . '.' . $file_extension;
         $file_path = $upload_directory . '/' . $file_name;
 
