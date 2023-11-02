@@ -2,7 +2,7 @@
 
 ////////////TEMPLATES
 function display_self_esteem_metabox() {
-	return "sdfdsfsdfsf";
+	return "sfsdfdsfsdfsddfs";
 }
 
 function self_esteem_metabox() {
