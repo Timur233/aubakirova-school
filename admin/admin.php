@@ -26,7 +26,7 @@ function hide_editor_and_thumbnail_self_esteem() {
 	}
 }
 
-add_action('init', 'hide_editor_and_thumbnail_self_esteem');
+add_action('admin_init', 'hide_editor_and_thumbnail_self_esteem');
 
 /**
  * Кастомные стили адми панели
