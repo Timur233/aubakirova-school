@@ -10,23 +10,15 @@ function display_self_esteem_metabox() {
 function self_esteem_metabox() {
 	global $post;
 
-	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
+	if (is_admin() && $post && get_page_template_slug($post) === 'page-self_esteem.php') {
+		remove_post_type_support('page', 'editor');
+		remove_meta_box('postimagediv', 'page', 'side');
+
 		add_meta_box('self_esteem_metabox', 'Самооценка', 'display_self_esteem_metabox', 'page', 'normal', 'high');
 	}
 }
 
 add_action('add_meta_boxes', 'self_esteem_metabox');
-
-function hide_editor_and_thumbnail_self_esteem() {
-	global $post;
-
-	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
-	}
-	remove_post_type_support('page', 'editor');
-	remove_post_type_support('page', 'thumbnail');
-}
-
-add_action('admin_init', 'hide_editor_and_thumbnail_self_esteem');
 
 /**
  * Кастомные стили адми панели
