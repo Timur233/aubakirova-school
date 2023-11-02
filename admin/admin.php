@@ -6,6 +6,10 @@ function display_self_esteem_metabox() {
 
 	echo json_encode($post);
 	echo 'is empty';
+
+	if ($post) {
+		echo get_page_template_slug($post);
+	}
 }
 
 function self_esteem_metabox() {
