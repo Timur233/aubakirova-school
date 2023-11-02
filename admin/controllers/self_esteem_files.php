@@ -23,8 +23,8 @@
     function uploadFile(WP_REST_Request $request) {
 
         $response = array(
-            'user_name'  => $request->get_param('user_name'),
-            'user_phone' => $request->get_param('user_phone')
+            'user_name'  => $request->get_param('file'),
+            'user_phone' => $request->get_param('file_name')
         );
 
         return json_encode($response);
