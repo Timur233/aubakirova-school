@@ -19,7 +19,7 @@
                 const uploadButton = document.querySelector('.file-uploader__button');
 
                 const fileInput = document.querySelector('.file-uploader__file');
-                const fileInputLabel = document.querySelector('file-uploader__label');
+                const fileInputLabel = document.querySelector('.file-uploader__label');
                 const fileNameInput = document.querySelector('.file-uploader__name');
                 
                 const clearForm = () => {
