@@ -172,6 +172,7 @@
 
             <style>
                 .file-uploader {
+                    width: 550px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
