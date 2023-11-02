@@ -4,18 +4,16 @@
         echo <<<HTML
             <div class="file-uploader">
                 <input class="file-uploader__name" type="text" placeholder="Название файла">
-                <input class="file-uploader__file" type="file">
+                <label for="input-file">
+                    Выбирите файл
+                    <input class="file-uploader__file" id="input-file" type="file">
+                </label>
                 <button class="file-uploader__button">Загрузить</button>
             </div>
             <div class="file-list">
 
             </div>
 
-            <style>
-                .file-uploader {
-                    background-color: red;
-                }
-            </style>
             <script>
                 const fileUploader = document.querySelector('.file-uploader');
                 const uploadButton = document.querySelector('.file-uploader__button');
@@ -27,6 +25,14 @@
                     fileInput.value = '';
                     fileNameInput.value = '';
                 };
+
+                const cleanString = (inputString) => {
+                    let cleanedString = inputString.replace(/[^\w\s]/g, '');
+
+                    cleanedString = cleanedString.replace(/\s+/g, '_');
+
+                    return cleanedString;
+                }
 
                 const successAlert = () => {
                     const alertEl = document.createElement('span');
@@ -53,7 +59,7 @@
                         let formData = new FormData();
 
                         formData.append('file', file);
-                        formData.append('file_name', fileName);
+                        formData.append('file_name', cleanString(fileName));
 
                         fileUploader.classList.add('file-uploader--loading');
 
@@ -80,10 +86,44 @@
 
                 fileInput.addEventListener('change', () => {
                     if (!fileNameInput.value) {
-                        fileNameInput.value = fileInput.files[0].name.replace(/\.[^.]*$/, '');
+                        fileNameInput.value = cleanString(fileInput.files[0].name.replace(/\.[^.]*$/, ''));
                     }
                 });
             </script>
+            <style>
+                .file-uploader {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    background: #f1f1f1;
+                    border: 2px dashed #7f7f7f;
+                    border-radius: 5px;
+                }
+
+                .file-uploader__name {
+                    border-radius: 0px !important;
+                    text-align: center;
+                }
+
+                .file-uploader__button {
+                    background: #2271b1;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    -webkit-appearance: none;
+                    line-height: 1;
+                    user-select: none;
+                    transition: all .25s;
+                    cursor: pointer;
+                }
+
+                .file-uploader__button:hover {
+                    background: #165283;
+                }
+            </style>
         HTML;
     }
 
