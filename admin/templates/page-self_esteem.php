@@ -122,10 +122,13 @@
                     removeBtn.addEventListener('click', (event) => {
                         event.preventDefault();
                         event.stopPropagation();
+                        
+                        let formData = new FormData();
+                        formData.append('file_name', removeBtn.dataset.file);
 
                         fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove', {
                             method: 'POST',
-                            body: JSON.stringify({ file_name: removeBtn.dataset.file }),
+                            body: formData,
                         })
                             .then(res => {
                                 item.remove();
