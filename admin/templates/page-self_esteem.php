@@ -129,7 +129,9 @@
 
                     removeButton.dataset.file = fileName;
                     removeButton.addEventListener('click', () => { removeFn(item, removeButton) });
+                    removeButton.textContent = 'Удалить';
 
+                    item.classList = 'file-list__item';
                     item.textContent = fileName;
                     item.appendChild(readButton);
                     item.appendChild(removeButton);
