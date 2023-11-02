@@ -39,17 +39,19 @@ include('widgets/breadcrumbs.php');
                     $files = scandir($folder);
                     $files = array_diff($files, array('..', '.')); 
         
-                    echo '<div class="file-list">';
+                    echo '<div class="file-list flex">';
 
                     foreach ($files as $file) {
                         $fileInfo = pathinfo($file);
                         $fileExtension = $fileInfo['extension'];
 
                         echo <<<HTML
-                            <div class="file-list__item file-list__item--$fileExtension">
-                                $file
+                        <div class="flex__4">
+                            <div class="file-list__item">
+                                <span title="$file">$file</span>
                                 <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
                             </div>
+                        </div>
                         HTML;
                     }
 
@@ -74,6 +76,16 @@ include('widgets/breadcrumbs.php');
                 color: blue;
                 text-decoration: underline;
                 margin-top: 4px;
+            }
+
+            .file-list__item > span {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .file-list .flex__4 {
+                padding-right: 12px;
             }
         </style>
         </div>
