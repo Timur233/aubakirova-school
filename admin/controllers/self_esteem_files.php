@@ -17,7 +17,7 @@
     
         $rout_remove = '/remove';
         $rout_remove_params = [
-            'methods'  => 'GET',
+            'methods'  => 'POST',
             'callback' => 'removeFile',
             'args'     => [
                 'file_name' => [

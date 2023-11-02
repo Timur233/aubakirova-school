@@ -123,8 +123,9 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?file_name=' + removeBtn.dataset.file, {
-                            method: 'GET',
+                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove', {
+                            method: 'POST',
+                            body: JSON.stringify({ file_name: removeBtn.dataset.file }),
                         })
                             .then(res => {
                                 item.remove();
