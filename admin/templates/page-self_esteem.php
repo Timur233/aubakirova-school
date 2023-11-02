@@ -243,7 +243,7 @@
                 }
 
                 .file-list__item > a:first-child {
-                    margin-left: auto;
+                    margin-left: 20px;
                     margin-right: 8px;
                 }
 
