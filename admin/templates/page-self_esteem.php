@@ -31,6 +31,8 @@
                         formData.append('file', file);
                         formData.append('file_name', 'test');
 
+                        console.log(formData);
+
                         fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/upload', {
                             method: 'POST',
                             body: formData
