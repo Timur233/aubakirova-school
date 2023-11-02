@@ -8,7 +8,7 @@
             </div>
 
             <div class="flex__5 footer-social">
-                <a href="https://school.aubakirova.kz/camooczenka/" target="_blank" class="footer-social__item">
+                <a href="<?= get_permalink(1396) ?>" target="_blank" class="footer-social__item">
                     Cамооценка
                 </a>
 
