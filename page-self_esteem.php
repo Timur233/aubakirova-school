@@ -31,8 +31,24 @@ include('widgets/breadcrumbs.php');
         } else {
             // Ваш код для отображения содержания страницы
             while (have_posts()) : the_post();
-                the_title('<h1>', '</h1>');
-                the_content();
+                $folder = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
+                $files_html = '';
+        
+                if (is_dir($folder)) {
+                    $files_html = '';
+                    $files = scandir($folder);
+                    $files = array_diff($files, array('..', '.')); 
+        
+                    foreach ($files as $file) {
+                        echo <<<HTML
+                            <div class="file-list__item">
+                                $file
+                                <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
+                                <a data-file="$file" class="remove-btn">Удалить</a>
+                            </div>
+                        HTML;
+                    }
+                }
             endwhile;
         }
         ?>
