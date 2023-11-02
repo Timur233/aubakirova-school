@@ -73,7 +73,7 @@ ini_set('display_errors', 1);
                 $response['status'] = 200;
                 $response['message'] = 'Файл успешно удален';
             } else {
-                $response['message'] = 'Не удалось удалить файл ' . error_get_last()['message'];
+                $response['message'] = error_get_last()['message'] . '______' . $file_name;
             }
         }
 
