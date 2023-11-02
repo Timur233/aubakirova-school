@@ -1,36 +1,10 @@
 <?php 
 
 ////////////TEMPLATES
-function display_self_esteem_metabox() {
-	echo <<<HTML
-		<div class="file-uploader">
-			<input type="file">
-		</div>
-		<div class="file-list">
+require( get_template_directory().'/admin/templates/page-self_esteem.php');
 
-		</div>
-
-		<style>
-			.file-uploader {
-				background-color: red;
-			}
-		</style>
-		<script></script>
-	HTML;
-}
-
-function self_esteem_metabox() {
-	global $post;
-
-	if (is_admin() && $post && get_page_template_slug($post) === 'page-self_esteem.php') {
-		remove_post_type_support('page', 'editor');
-		remove_meta_box('postimagediv', 'page', 'side');
-
-		add_meta_box('self_esteem_metabox', 'Список файлов', 'display_self_esteem_metabox', 'page', 'normal', 'high');
-	}
-}
-
-add_action('add_meta_boxes', 'self_esteem_metabox');
+////////////CONTROLLERS
+require( get_template_directory().'/admin/controllers/self_esteem_files.php');
 
 /**
  * Кастомные стили адми панели
