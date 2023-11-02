@@ -57,6 +57,9 @@
     }
 
     function removeFile(WP_REST_Request $request) {
+
+        return '23424';
+
         $file_name = $request->get_param('file_name');
         $file_path = $upload_directory . '/' . $file_name;
         $response = [
