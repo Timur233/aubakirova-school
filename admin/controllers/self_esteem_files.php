@@ -21,9 +21,9 @@
     } );
 
     function uploadFile(WP_REST_Request $request) {
-
+        $file = $_FILES['file'];
         $response = array(
-            'user_name'  => $request->get_param('file'),
+            'user_name'  => $file,
             'user_phone' => $request->get_param('file_name')
         );
 
