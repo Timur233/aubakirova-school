@@ -1,4 +1,7 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     add_action( 'rest_api_init', function(){
         $namespace = 'esteemfiles/v1';
     
@@ -45,7 +48,7 @@
             'file_name' => $file['name']
         );
 
-        if (!file_exists($upload_directory)) mkdir($upload_directory, 0755, true);
+        if (!file_exists($upload_directory)) mkdir($upload_directory, 0777, true);
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
             $response['message'] = 'Файл успешно загружен';
@@ -70,7 +73,7 @@
                 $response['status'] = 200;
                 $response['message'] = 'Файл успешно удален';
             } else {
-                $response['message'] = 'Не удалось удалить файл';
+                $response['message'] = 'Не удалось удалить файл ' . error_get_last()['message'];
             }
         }
 
