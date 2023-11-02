@@ -4,15 +4,15 @@
 function display_self_esteem_metabox() {
 	global $post;
 	
-	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
-		echo get_page_template_slug($post);
-	} else {
-		return false;
-	}
+	echo "IS METABOX";
 }
 
 function self_esteem_metabox() {
-    add_meta_box('self_esteem_metabox', 'Самооценка', 'display_self_esteem_metabox', 'page', 'normal', 'high');
+	global $post;
+
+	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
+		add_meta_box('self_esteem_metabox', 'Самооценка', 'display_self_esteem_metabox', 'page', 'normal', 'high');
+	}
 }
 
 add_action('add_meta_boxes', 'self_esteem_metabox');
