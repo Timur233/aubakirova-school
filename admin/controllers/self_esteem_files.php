@@ -30,9 +30,9 @@
     
     } );
 
-    $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
 
     function uploadFile(WP_REST_Request $request) {
+        $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
         $file = $_FILES['file'];
         $file_info = pathinfo($file['name']);
         $file_extension = $file_info['extension'];
@@ -57,6 +57,7 @@
     }
 
     function removeFile(WP_REST_Request $request) {
+        $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
         $file_name = $request->get_param('file_name');
         $file_path = $upload_directory . '/' . $file_name;
         $response = [
