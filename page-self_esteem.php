@@ -69,6 +69,7 @@ include('widgets/breadcrumbs.php');
                 display: flex;
                 flex-direction: column;
                 font-weight: 500;
+                margin-bottom: 12px;
             }
 
             .file-list__item > a {
@@ -86,6 +87,13 @@ include('widgets/breadcrumbs.php');
 
             .file-list .flex__4 {
                 padding-right: 12px;
+            }
+
+            @media (max-width: 720px) {
+                .file-list > .flex__4 {
+                    width: 100%;
+                    padding: 0;
+                }
             }
         </style>
         </div>
