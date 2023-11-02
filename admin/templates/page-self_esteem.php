@@ -68,17 +68,6 @@
                         alertEl.remove();
                     }, 1000)
                 };
-
-                const appendFile = (fileName) => {
-                    const file = '' + 
-                        '<div class="file-list__item">' +
-                        fileName +
-                        '<a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/' + fileName + '" target="_blank">Просмотр</a>' +
-                        '<a data-file="$file" class="remove-btn">Удалить</a>' +
-                        '</div>';
-
-                    list.prepend(file);
-                };
                 
                 uploadButton.addEventListener('click', (event) => {
 
@@ -103,8 +92,8 @@
                             .then(response => response.json())
                             .then(data => {
                                 fileUploader.classList.remove('file-uploader--loading');
-
-                                appendFile(data.file_name);
+                                list.appendFile(data.file_name);
+                                
                                 clearForm();
                                 successAlert();
                             })
@@ -128,7 +117,41 @@
             </script>
 
             <script>
+                const listBlock = document.querySelector('.file-list');
                 const fileList = document.querySelectorAll('.file-list__item');
+                const appendFile = (fileName) => {
+                    const item = document.createElement('div');
+                    const readButton = document.createElement('a');
+                    const removeButton = document.createElement('a');
+
+                    readButton.href = 'https://school.aubakirova.kz/wp-content/uploads/self-esteem/' + fileName;
+                    readButton.textContent = 'Просмотр';
+
+                    removeButton.dataset.file = fileName;
+                    removeButton.addEventListener('click', () => { removeFn(item, removeButton) });
+
+                    item.textContent = fileName;
+                    item.appendChild(readButton);
+                    item.appendChild(removeButton);
+
+                    fileList.prepend(file);
+                };
+                const removeFn = (item, removeBtn) => {
+                    let formData = new FormData();
+                    formData.append('file_name', removeBtn.dataset.file);
+
+                    fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                        .then(res => {
+                            alert('Файл успешно удален');
+                            item.remove();
+                        })
+                        .catch(() => {
+                            alert('Не удалось удалить файл!')
+                        })
+                }
 
                 fileList.forEach(item => {
                     const removeBtn = item.querySelector('.remove-btn');
@@ -137,22 +160,11 @@
                         event.preventDefault();
                         event.stopPropagation();
                         
-                        let formData = new FormData();
-                        formData.append('file_name', removeBtn.dataset.file);
-
-                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove', {
-                            method: 'POST',
-                            body: formData,
-                        })
-                            .then(res => {
-                                alert('Файл успешно удален');
-                                item.remove();
-                            })
-                            .catch(() => {
-                                alert('Не удалось удалить файл!')
-                            })
+                        removeFn(item, removeBtn);
                     });
                 })
+
+                listBlock.appendFile = appendFile;
             </script>
 
             <style>
