@@ -198,7 +198,7 @@ require( get_template_directory().'/includes/customizer.php');
 require( get_template_directory().'/includes/main_menu.php');
 
 ////////////ADMIN
-require( get_template_directory().'/includes/admin.php');
+require( get_template_directory().'/admin/admin.php');
 
 ////////////FORMS
 require( get_template_directory().'/includes/forms.php');

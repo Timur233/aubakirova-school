@@ -1,5 +1,18 @@
 <?php 
 
+////////////TEMPLATES
+function include_admin_templates($template) {
+	global $post;
+
+	if ($post->post_type == 'page') {
+		return get_template_directory() . '/admin/templates/page-self_esteem.php';
+	}
+
+    return $template;
+}
+
+add_filter('template_include', 'include_admin_templates');
+
 /**
  * Кастомные стили адми панели
  */
