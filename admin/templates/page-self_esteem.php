@@ -5,6 +5,7 @@
         $files_html = '11';
 
         if (is_dir($directory)) {
+            $files_html = '12';
             $files = glob($directory . '/*');
             foreach ($files as $file) {
                 $files_html += basename($file) . "<br>";
