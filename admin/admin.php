@@ -1,17 +1,15 @@
 <?php 
 
 ////////////TEMPLATES
-function include_admin_templates($template) {
-	global $post;
-
-	// if ($post->post_type == 'page') {
-	// 	return get_template_directory() . '/admin/templates/page-self_esteem.php';
-	// }
-
-    return $template;
+function display_self_esteem_metabox() {
+	echo "sdfdsfsdfsf";
 }
 
-add_filter('template_include', 'include_admin_templates');
+function self_esteem_metabox() {
+    add_meta_box('self_esteem_metabox', 'Самооценка', 'display_self_esteem_metabox', 'page', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'self_esteem_metabox');
 
 /**
  * Кастомные стили адми панели
