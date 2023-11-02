@@ -4,12 +4,10 @@
         $folder = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
         $files_html = '11';
 
-        if (is_dir($directory)) {
-            $files_html = '12';
-            $files = glob($directory . '/*');
-            foreach ($files as $file) {
-                $files_html += basename($file) . "<br>";
-            }
+        $files_html = '12';
+        $files = glob($directory . '/*');
+        foreach ($files as $file) {
+            $files_html += basename($file) . "<br>";
         }
         
         echo <<<HTML
