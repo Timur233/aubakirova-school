@@ -16,11 +16,17 @@ include('widgets/breadcrumbs.php');
         <div class="container">
         <?php
         if (post_password_required()) {
-            echo 'Эта страница защищена паролем. Введите пароль для доступа.';
-            echo '<form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
-                    <label for="password">Пароль:</label>
-                    <input name="post_password" id="password" type="password">
-                    <input type="submit" name="Submit" value="Войти">
+            echo 'Эта страница защищена паролем. <br> Введите пароль для доступа.';
+            echo '<div class="section-title">
+                    <h2 class="section-title__h2 section-title__h2--bold">Вход</h2>
+                </div>
+                <form class="flex" action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
+                <div class="flex__3 input-group">
+                    <input name="post_password" id="password" type="password" placeholder="Пароль" class="input-group__input">
+                </div>
+                <div class="flex__3 input-group">
+                    <button type="submit" class="btn btn--outline callback__button" name="Submit">Войти</button>
+                </div>
                 </form>';
         } else {
             // Ваш код для отображения содержания страницы
