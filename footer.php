@@ -9,7 +9,7 @@
 
             <div class="flex__5 footer-social">
                 <a href="<?= get_permalink(1396) ?>" class="footer-social__item">
-                    <?= pll__('Cамооценка') ?>
+                    <?= pll__('Самооценка') ?>
                 </a>
 
                 <?php if (get_theme_mod('insta_link')):?>
