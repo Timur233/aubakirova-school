@@ -94,6 +94,18 @@ include('widgets/breadcrumbs.php');
                     width: 100%;
                     padding: 0;
                 }
+
+                .files-form {
+                    flex-direction: column;
+                }
+
+                .files-form .flex__3 {
+                    width: auto;
+                }
+
+                .files-form .flex__2 {
+                    width: 120px;
+                }
             }
         </style>
         </div>
