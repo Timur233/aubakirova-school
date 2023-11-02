@@ -8,7 +8,7 @@
             </div>
 
             <div class="flex__5 footer-social">
-                <a href="<?= get_permalink(1396) ?>" target="_blank" class="footer-social__item">
+                <a href="<?= get_permalink(1396) ?>" class="footer-social__item">
                     Cамооценка
                 </a>
 
