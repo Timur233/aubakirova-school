@@ -134,7 +134,7 @@
                     item.appendChild(readButton);
                     item.appendChild(removeButton);
 
-                    fileList.prepend(file);
+                    fileList.prepend(item);
                 };
                 const removeFn = (item, removeBtn) => {
                     let formData = new FormData();
