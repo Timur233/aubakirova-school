@@ -112,6 +112,30 @@
                     }
                 });
             </script>
+
+            <script>
+                const fileList = document.querySelectorAll('.file-list__item');
+
+                fileList.forEach(item => {
+                    const removeBtn = item.querySelector('.remove-btn');
+
+                    removeBtn.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?name=' + removeBtn.href, {
+                            method: 'GET',
+                        })
+                            .then(res => {
+                                item.remove();
+                            })
+                            .catch(() => {
+                                alert('Не удалось удалить файл!')
+                            })
+                    });
+                })
+            </script>
+
             <style>
                 .file-uploader {
                     display: flex;
