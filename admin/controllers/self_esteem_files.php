@@ -9,10 +9,7 @@
             'args'     => [
                 'file_name' => [
                     'type'     => 'string', 
-                ],
-                'file' => [
-                    'type'    => 'anyOf',
-                ],
+                ]
             ],
         ];
     
@@ -22,8 +19,9 @@
 
     function uploadFile(WP_REST_Request $request) {
         $file = $_FILES['file'];
+        $folder_dir = $_SERVER['DOCUMENT_ROOT'];
         $response = array(
-            'user_name'  => $file,
+            'user_name'  => $folder_dir,
             'user_phone' => $request->get_param('file_name')
         );
 
