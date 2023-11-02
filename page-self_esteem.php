@@ -20,7 +20,7 @@ include('widgets/breadcrumbs.php');
                     <h2 class="section-title__h2 section-title__h2--bold">Вход</h2>
                 </div>
                 <p>Эта страница защищена паролем. <br> Введите пароль для входа.</p>
-                <form class="flex" style="gap: 12px" action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
+                <form class="flex files-form" style="gap: 12px" action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
                 <div class="flex__3 input-group">
                     <input name="post_password" id="password" type="password" placeholder="Пароль" class="input-group__input">
                 </div>
