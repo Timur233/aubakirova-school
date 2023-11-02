@@ -1,7 +1,4 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
     add_action( 'rest_api_init', function(){
         $namespace = 'esteemfiles/v1';
     
@@ -73,7 +70,7 @@ ini_set('display_errors', 1);
                 $response['status'] = 200;
                 $response['message'] = 'Файл успешно удален';
             } else {
-                $response['message'] = error_get_last()['message'] . '______' . $file_name;
+                $response['message'] = 'НЕ удалось удалить файл';
             }
         }
 
