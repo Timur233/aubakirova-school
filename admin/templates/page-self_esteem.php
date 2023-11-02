@@ -5,14 +5,9 @@
         $files_html = '11';
 
         if (is_dir($directory)) {
-            $files = scandir($directory);
-
-            print_r($files);
-
-            $files = array_diff($files, array('..', '.'));
-
+            $files = glob($directory . '/*');
             foreach ($files as $file) {
-                $files_html += $file . "<br>";
+                $files_html += basename($file) . "<br>";
             }
         }
         
