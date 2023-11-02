@@ -13,7 +13,7 @@
             ],
         ];
     
-        register_rest_route( $namespace, $rout_upload, $rout_params_upload );
+        register_rest_route( $namespace, $rout_upload, $rout_upload_params );
     
         $rout_remove = '/remove';
         $rout_remove_params = [
@@ -26,7 +26,7 @@
             ],
         ];
     
-        register_rest_route( $namespace, $rout_remove, $rout_params_remove );
+        register_rest_route( $namespace, $rout_remove, $rout_remove_params );
     
     } );
 
@@ -57,9 +57,6 @@
     }
 
     function removeFile(WP_REST_Request $request) {
-
-        return '23424';
-
         $file_name = $request->get_param('file_name');
         $file_path = $upload_directory . '/' . $file_name;
         $response = [
