@@ -4,7 +4,7 @@
         echo <<<HTML
             <div class="file-uploader">
                 <input class="file-uploader__file" type="file">
-                <button class="file-uploader__button"></button>
+                <button class="file-uploader__button">Загрузить</button>
             </div>
             <div class="file-list">
 
@@ -18,7 +18,7 @@
             <script>
                 const uploadButton = document.querySelector('.file-uploader__button')
                 
-                uploadButton.addEventListener('click', () => {
+                uploadButton.addEventListener('click', (у) => {
                     const fileInput = document.querySelector('.file-uploader__file');
                     const file = fileInput.files[0];
 
@@ -41,6 +41,9 @@
                     } else {
                         console.error('Выберите файл для загрузки.');
                     }
+
+                    e.preventDefault();
+                    e.stopPropagation();
                 });
             </script>
         HTML;
