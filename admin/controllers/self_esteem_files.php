@@ -22,8 +22,8 @@
         $file = $_FILES['file'];
         $file_info = pathinfo($file['name']);
         $file_extension = $file_info['extension'];
-        $file_name = $request->get_param('user_name');
-        $file_path = $upload_directory . '/' . $file['name'] . time() . $file_extension;
+        $file_name = $request->get_param('user_name') . time() . '.' . $file_extension;
+        $file_path = $upload_directory . '/' . $file_name;
 
         $response = array(
             'message'  => '',
