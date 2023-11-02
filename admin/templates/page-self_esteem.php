@@ -103,6 +103,17 @@
                     background: #f1f1f1;
                     border: 2px dashed #7f7f7f;
                     border-radius: 5px;
+                    position: relative;
+                }
+
+                .file-uploader__alert {
+                    position: absolute;
+                    right: 12px;
+                    top: 12px;
+                    background: rgb(0 128 0 / 84%);
+                    padding: 7px 20px;
+                    color: #fff;
+                    border-radius: 3px;
                 }
 
                 .file-uploader__name {
