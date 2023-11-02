@@ -34,7 +34,7 @@
             </div>
 
             <script>
-                const list = document.querySelectorAll('.file-list__item');
+                const list = document.querySelector('.file-list');
                 const fileUploader = document.querySelector('.file-uploader');
                 const uploadButton = document.querySelector('.file-uploader__button');
 
