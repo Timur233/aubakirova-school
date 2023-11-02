@@ -229,7 +229,7 @@
                     margin-top: 20px;
                     margin-bottom: 12px;
                     display: flex;
-                    flex-direction: column;
+                    flex-wrap: wrap;
                     gap: 8px;
                 }
 
@@ -249,6 +249,29 @@
                 .file-list__item > a {
                     text-decoration: underline;
                     cursor:pointer;
+                }
+
+
+
+
+                div#revisionsdiv {
+                    display: none;
+                }
+
+                div#advanced-sortables {
+                    display: none;
+                }
+
+                div#titlediv {
+                    display: none;
+                }
+
+                div#postbox-container-1 {
+                    display: none;
+                }
+
+                #poststuff #post-body.columns-2 {
+                    margin-right: 0;
                 }
             </style>
         HTML;
