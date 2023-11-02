@@ -39,15 +39,21 @@ include('widgets/breadcrumbs.php');
                     $files = scandir($folder);
                     $files = array_diff($files, array('..', '.')); 
         
+                    echo '<div class="file-list">';
+
                     foreach ($files as $file) {
+                        $fileInfo = pathinfo($file);
+                        $fileExtension = $fileInfo['extension'];
+
                         echo <<<HTML
-                            <div class="file-list__item">
+                            <div class="file-list__item file-list__item--$fileExtension">
                                 $file
                                 <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
-                                <a data-file="$file" class="remove-btn">Удалить</a>
                             </div>
                         HTML;
                     }
+
+                    echo '</div>';
                 }
             endwhile;
         }
