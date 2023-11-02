@@ -123,7 +123,7 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?name=' + removeBtn.href, {
+                        fetch('https://school.aubakirova.kz/wp-json/esteemfiles/v1/remove?file_name=' + removeBtn.href, {
                             method: 'GET',
                         })
                             .then(res => {

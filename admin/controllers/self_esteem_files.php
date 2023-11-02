@@ -2,8 +2,8 @@
     add_action( 'rest_api_init', function(){
         $namespace = 'esteemfiles/v1';
     
-        $rout = '/upload';
-        $rout_params = [
+        $rout_upload = '/upload';
+        $rout_upload_params = [
             'methods'  => 'POST',
             'callback' => 'uploadFile',
             'args'     => [
@@ -13,12 +13,26 @@
             ],
         ];
     
-        register_rest_route( $namespace, $rout, $rout_params );
+        register_rest_route( $namespace, $rout_upload, $rout_params_upload );
+    
+        $rout_remove = '/remove';
+        $rout_remove_params = [
+            'methods'  => 'GET',
+            'callback' => 'removeFile',
+            'args'     => [
+                'file_name' => [
+                    'type'     => 'string', 
+                ]
+            ],
+        ];
+    
+        register_rest_route( $namespace, $rout_remove, $rout_params_remove );
     
     } );
 
+    $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
+
     function uploadFile(WP_REST_Request $request) {
-        $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
         $file = $_FILES['file'];
         $file_info = pathinfo($file['name']);
         $file_extension = $file_info['extension'];
@@ -40,5 +54,20 @@
         }
 
         return $response;
+    }
+
+    function removeFile(WP_REST_Request $request) {
+        $file_name = $request->get_param('file_name');
+        $file_path = $upload_directory . '/' . $file_name;
+
+        if (file_exists($file_path)) {
+            if (unlink($file_path)) {
+                echo 'Файл успешно удален.';
+            } else {
+                echo 'Не удалось удалить файл.';
+            }
+        } else {
+            echo 'Файл не существует.';
+        }
     }
 ?>
