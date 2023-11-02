@@ -4,9 +4,9 @@
 function include_admin_templates($template) {
 	global $post;
 
-	if ($post->post_type == 'page') {
-		return get_template_directory() . '/admin/templates/page-self_esteem.php';
-	}
+	// if ($post->post_type == 'page') {
+	// 	return get_template_directory() . '/admin/templates/page-self_esteem.php';
+	// }
 
     return $template;
 }
