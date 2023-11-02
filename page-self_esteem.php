@@ -19,7 +19,7 @@ include('widgets/breadcrumbs.php');
             echo '<div class="section-title" style="margin-bottom: 22px">
                     <h2 class="section-title__h2 section-title__h2--bold">Вход</h2>
                 </div>
-                <p>Эта страница защищена паролем. <br> Введите пароль для доступа.</p>
+                <p>Эта страница защищена паролем. <br> Введите пароль для входа.</p>
                 <form class="flex" style="gap: 12px" action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
                 <div class="flex__3 input-group">
                     <input name="post_password" id="password" type="password" placeholder="Пароль" class="input-group__input">
