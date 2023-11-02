@@ -12,7 +12,7 @@
                     'required' => true,  
                 ],
                 'file' => [
-                    'type'    => 'array',
+                    'type'    => 'object',
                     'required' => true,  
                 ],
             ],
