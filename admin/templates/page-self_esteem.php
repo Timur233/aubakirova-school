@@ -27,6 +27,19 @@
                     fileInput.value = '';
                     fileNameInput.value = '';
                 };
+
+                const successAlert = () => {
+                    const alertEl = document.createElement('span');
+
+                    alertEl.classList = 'file-uploader__alert';
+                    alertEl.textContent = 'Файл успешно загружен';
+
+                    fileUploader.appendChild(alertEl);
+
+                    setTimeout(() => {
+                        alertEl.remove();
+                    }, 10000)
+                };
                 
                 uploadButton.addEventListener('click', (event) => {
 
@@ -53,6 +66,7 @@
                                 fileUploader.classList.remove('file-uploader--loading');
 
                                 clearForm();
+                                successAlert();
                             })
                             .catch(error => {
                                 fileUploader.classList.remove('file-uploader--loading');
