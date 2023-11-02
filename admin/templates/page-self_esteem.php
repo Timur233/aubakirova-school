@@ -18,7 +18,11 @@
             <script>
                 const uploadButton = document.querySelector('.file-uploader__button')
                 
-                uploadButton.addEventListener('click', (у) => {
+                uploadButton.addEventListener('click', (event) => {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
                     const fileInput = document.querySelector('.file-uploader__file');
                     const file = fileInput.files[0];
 
@@ -41,9 +45,6 @@
                     } else {
                         console.error('Выберите файл для загрузки.');
                     }
-
-                    e.preventDefault();
-                    e.stopPropagation();
                 });
             </script>
         HTML;
