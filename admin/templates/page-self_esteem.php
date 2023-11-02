@@ -5,8 +5,8 @@
             <div class="file-uploader">
                 <input class="file-uploader__name" type="text" placeholder="Название файла">
                 <label for="input-file">
-                    Выбирите файл
-                    <input class="file-uploader__file" id="input-file" type="file">
+                    <span class="file-uploader__label">Выбирите файл</span>
+                    <input class="file-uploader__file" id="input-file" type="file" style="display: none">
                 </label>
                 <button class="file-uploader__button">Загрузить</button>
             </div>
@@ -19,15 +19,17 @@
                 const uploadButton = document.querySelector('.file-uploader__button');
 
                 const fileInput = document.querySelector('.file-uploader__file');
+                const fileInputLabel = document.querySelector('file-uploader__label');
                 const fileNameInput = document.querySelector('.file-uploader__name');
                 
                 const clearForm = () => {
                     fileInput.value = '';
                     fileNameInput.value = '';
+                    fileInputLabel.textContent = 'Выбирите файл';
                 };
 
                 const cleanString = (inputString) => {
-                    let cleanedString = inputString.replace(/[^\w\s]/g, '');
+                    let cleanedString = inputString.replace(/[^\w\sа-яА-Я]/g, '');
 
                     cleanedString = cleanedString.replace(/\s+/g, '_');
 
@@ -87,6 +89,7 @@
                 fileInput.addEventListener('change', () => {
                     if (!fileNameInput.value) {
                         fileNameInput.value = cleanString(fileInput.files[0].name.replace(/\.[^.]*$/, ''));
+                        fileInputLabel.textContent = fileInput.files[0].name;
                     }
                 });
             </script>
