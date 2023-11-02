@@ -16,7 +16,7 @@ include('widgets/breadcrumbs.php');
         <div class="container">
         <?php
         if (post_password_required()) {
-            echo '<div class="section-title">
+            echo '<div class="section-title" style="margin-bottom: 22px">
                     <h2 class="section-title__h2 section-title__h2--bold">Вход</h2>
                 </div>
                 <p>Эта страница защищена паролем. <br> Введите пароль для доступа.</p>
@@ -24,7 +24,7 @@ include('widgets/breadcrumbs.php');
                 <div class="flex__3 input-group">
                     <input name="post_password" id="password" type="password" placeholder="Пароль" class="input-group__input">
                 </div>
-                <div class="flex__3 input-group">
+                <div class="flex__2 input-group">
                     <button type="submit" class="btn btn--outline callback__button" name="Submit">Войти</button>
                 </div>
                 </form>';
