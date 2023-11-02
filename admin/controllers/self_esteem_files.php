@@ -20,7 +20,7 @@
     function uploadFile(WP_REST_Request $request) {
         $file = $_FILES['file'];
         $upload_directory = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
-        $file_path = $upload_directory . $file['name'];
+        $file_path = $upload_directory . '/' . $file['name'];
 
         $response = array(
             'message'  => '',
@@ -37,6 +37,6 @@
             $response['message'] = 'Не удалось загрузить файл';
         }
 
-        return json_encode($response);
+        return $response;
     }
 ?>
