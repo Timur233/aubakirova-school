@@ -70,13 +70,12 @@
                 };
 
                 const appendFile = (fileName) => {
-                    const file = `
-                        <div class="file-list__item">
-                            ${fileName}
-                            <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/${fileName}" target="_blank">Просмотр</a>
-                            <a data-file="$file" class="remove-btn">Удалить</a>
-                        </div>
-                    `;
+                    const file = '' + 
+                        '<div class="file-list__item">' +
+                        fileName +
+                        '<a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/' + fileName + '" target="_blank">Просмотр</a>' +
+                        '<a data-file="$file" class="remove-btn">Удалить</a>' +
+                        '</div>';
 
                     fileList.prepend(file);
                 };
