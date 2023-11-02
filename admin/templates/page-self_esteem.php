@@ -1,6 +1,18 @@
 <?php 
 
     function display_self_esteem_metabox() {
+        $folder = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
+        $files_html = '';
+
+        if (is_dir($directory)) {
+            $files = scandir($directory);
+            $files = array_diff($files, array('..', '.'));
+
+            foreach ($files as $file) {
+                $files_html += $file . "<br>";
+            }
+        }
+        
         echo <<<HTML
             <div class="file-uploader">
                 <input class="file-uploader__name" type="text" placeholder="Название файла">
@@ -11,7 +23,7 @@
                 <button class="file-uploader__button">Загрузить</button>
             </div>
             <div class="file-list">
-
+                $files_html
             </div>
 
             <script>
@@ -46,7 +58,7 @@
 
                     setTimeout(() => {
                         alertEl.remove();
-                    }, 10000)
+                    }, 1000)
                 };
                 
                 uploadButton.addEventListener('click', (event) => {
@@ -110,7 +122,7 @@
                     position: absolute;
                     right: 12px;
                     top: 12px;
-                    background: rgb(0 128 0 / 84%);
+                    background: rgb(0 128 0 / 74%);
                     padding: 7px 20px;
                     color: #fff;
                     border-radius: 3px;
