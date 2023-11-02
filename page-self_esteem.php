@@ -58,6 +58,24 @@ include('widgets/breadcrumbs.php');
             endwhile;
         }
         ?>
+        <style>
+            .file-list__item {
+                padding: 20px;
+                background: #ffe5ae;
+                border: 1px solid #fabf40;
+                border-radius: 4px;
+                display: flex;
+                flex-direction: column;
+                font-weight: 500;
+            }
+
+            .file-list__item > a {
+                font-weight: 200;
+                color: blue;
+                text-decoration: underline;
+                margin-top: 4px;
+            }
+        </style>
         </div>
     </section>
 
