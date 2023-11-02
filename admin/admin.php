@@ -21,9 +21,9 @@ function hide_editor_and_thumbnail_self_esteem() {
 	global $post;
 
 	if ($post && get_page_template_slug($post) === 'page-self_esteem.php') {
-		remove_post_type_support('page', 'editor');
-		remove_post_type_support('page', 'thumbnail');
 	}
+	remove_post_type_support('page', 'editor');
+	remove_post_type_support('page', 'thumbnail');
 }
 
 add_action('admin_init', 'hide_editor_and_thumbnail_self_esteem');
