@@ -2,7 +2,7 @@
 
     function display_self_esteem_metabox() {
         $folder = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/uploads/self-esteem';
-        $files_html = '';
+        $files_html = '11';
 
         if (is_dir($directory)) {
             $files = scandir($directory);
