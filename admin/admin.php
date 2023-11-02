@@ -4,7 +4,8 @@
 function display_self_esteem_metabox() {
 	global $post;
 
-	return json_encode($post);
+	echo json_encode($post);
+	echo 'is empty';
 }
 
 function self_esteem_metabox() {
