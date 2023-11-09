@@ -41,18 +41,22 @@ include('widgets/breadcrumbs.php');
         
                     echo '<div class="file-list flex">';
 
-                    foreach ($files as $file) {
-                        $fileInfo = pathinfo($file);
-                        $fileExtension = $fileInfo['extension'];
-
-                        echo <<<HTML
-                        <div class="flex__4">
-                            <div class="file-list__item">
-                                <span title="$file">$file</span>
-                                <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
+                    if (count($files) > 0) {
+                        foreach ($files as $file) {
+                            $fileInfo = pathinfo($file);
+                            $fileExtension = $fileInfo['extension'];
+    
+                            echo <<<HTML
+                            <div class="flex__4">
+                                <div class="file-list__item">
+                                    <span title="$file">$file</span>
+                                    <a href="https://school.aubakirova.kz/wp-content/uploads/self-esteem/$file" target="_blank">Просмотр</a>
+                                </div>
                             </div>
-                        </div>
-                        HTML;
+                            HTML;
+                        }
+                    } else {
+                        echo '<p>Ничего не найдено</p>';
                     }
 
                     echo '</div>';
